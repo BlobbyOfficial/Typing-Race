@@ -1,0 +1,185 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #121212, #242424); /* Grey gradient */
+    color: #f1f1f1;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    position: relative;
+}
+
+/* Favicon in the corner */
+#favicon {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    width: 40px;
+    height: 40px;
+}
+
+/* Container styling */
+.container {
+    text-align: center;
+    background-color: rgba(26, 26, 26, 0.8); /* Slightly dark container with opacity */
+    border-radius: 12px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.6);
+    padding: 40px 50px;
+    width: 90%;
+    max-width: 600px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Header Styling */
+h1 {
+    font-size: 3rem;
+    color: #FFD700; /* Golden yellow */
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+    font-weight: bold;
+    animation: slideDown 1s ease-out;
+}
+
+/* Prompt text (the text the user types) */
+#prompt-text {
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+    line-height: 1.6;
+    color: #e6e6e6; /* Light grayish color */
+    font-weight: 300;
+    transition: color 0.3s ease;
+}
+
+/* Input Field Styling */
+#user-input {
+    font-size: 1.5rem;
+    padding: 15px 20px;
+    width: 100%;
+    max-width: 450px;
+    border: none;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    outline: none;
+    background-color: #333;
+    color: #f1f1f1;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    box-shadow: 0 0 10px rgba(18, 18, 18, 0.8);
+}
+
+#user-input:focus {
+    background-color: #444;
+    color: #FFB84D; /* Light yellow */
+    box-shadow: 0 0 15px rgba(18, 18, 18, 0.8);
+}
+
+/* Timer and status message styling */
+#timer, #status, #accuracy, #wpm {
+    font-size: 1.2rem;
+    margin-top: 10px;
+    color: #f0f0f0;
+    font-weight: 500;
+    transition: color 0.3s ease-in-out;
+}
+
+#accuracy {
+    margin-top: 15px;
+    color: #FFD700; /* Golden yellow */
+}
+
+#wpm {
+    margin-top: 10px;
+    color: #FF8C00; /* Orange */
+}
+
+#restart-btn {
+    margin-top: 30px;
+    padding: 14px 30px;
+    font-size: 1.2rem;
+    background-color: #FFB84D;
+    color: #fff;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+#restart-btn:hover {
+    background-color: #FF8C00; /* Darker orange on hover */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Button & Text Color Transitions */
+input:focus {
+    outline: none;
+    box-shadow: 0 0 8px rgba(255, 140, 0, 0.6);
+}
+
+#timer, #accuracy, #wpm {
+    color: #e0e0e0;
+    font-weight: bold;
+}
+
+#status {
+    font-size: 1.2rem;
+    color: #FFD700;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/* Dark Mode Typography */
+h1, #status, #accuracy, #wpm, #timer {
+    font-family: 'Arial', sans-serif;
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: 100%;
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    #user-input {
+        font-size: 1.3rem;
+    }
+
+    #restart-btn {
+        font-size: 1.1rem;
+        padding: 10px 25px;
+    }
+}
